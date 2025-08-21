@@ -1,0 +1,888 @@
+[
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "No",
+  "javascript": null,
+  "json": "{\"columns\": [{\"fieldname\": \"supplier_name\", \"label\": \"Supplier\", \"fieldtype\": \"Link\", \"options\": \"Supplier\", \"width\": 150, \"id\": \"supplier_name\", \"name\": \"Supplier\", \"editable\": false, \"compareValue\": null}, {\"fieldname\": \"quotation\", \"label\": \"Supplier Quotation\", \"fieldtype\": \"Link\", \"options\": \"Supplier Quotation\", \"width\": 200, \"id\": \"quotation\", \"name\": \"Supplier Quotation\", \"editable\": false, \"compareValue\": null}, {\"fieldname\": \"request_for_quotation\", \"label\": \"Request for Quotation\", \"fieldtype\": \"Link\", \"options\": \"Request for Quotation\", \"width\": 150, \"id\": \"request_for_quotation\", \"name\": \"Request for Quotation\", \"editable\": false, \"compareValue\": null}, {\"fieldname\": \"item_code\", \"fieldtype\": \"Data\", \"label\": \"Item Code\", \"insert_after_index\": 0, \"link_field\": {\"item_code\": {}}, \"doctype\": \"Item\", \"width\": 100, \"id\": \"item_code\", \"name\": \"Item Code\", \"editable\": false, \"compareValue\": null}, {\"fieldname\": \"item_name\", \"fieldtype\": \"Data\", \"label\": \"Item Name\", \"insert_after_index\": 1, \"link_field\": {\"item_code\": {}}, \"doctype\": \"Item\", \"width\": 100, \"id\": \"item_name\", \"name\": \"Item Name\", \"editable\": false, \"compareValue\": null}, {\"fieldname\": \"qty\", \"label\": \"Quantity\", \"fieldtype\": \"Float\", \"width\": 80, \"id\": \"qty\", \"name\": \"Quantity\", \"editable\": false, \"compareValue\": null}, {\"fieldname\": \"uom\", \"label\": \"UOM\", \"fieldtype\": \"Link\", \"options\": \"UOM\", \"width\": 90, \"id\": \"uom\", \"name\": \"UOM\", \"editable\": false, \"compareValue\": null}, {\"fieldname\": \"price_per_unit\", \"label\": \"Price per Unit (Stock UOM)\", \"fieldtype\": \"Currency\", \"options\": \"currency\", \"width\": 120, \"id\": \"price_per_unit\", \"name\": \"Price per Unit (Stock UOM)\", \"editable\": false, \"compareValue\": null}, {\"fieldname\": \"price\", \"label\": \"Price\", \"fieldtype\": \"Currency\", \"options\": \"currency\", \"width\": 110, \"id\": \"price\", \"name\": \"Price\", \"editable\": false, \"compareValue\": null}, {\"fieldname\": \"valid_till\", \"label\": \"Valid Till\", \"fieldtype\": \"Date\", \"width\": 100, \"id\": \"valid_till\", \"name\": \"Valid Till\", \"editable\": false}, {\"fieldname\": \"currency\", \"label\": \"Currency\", \"fieldtype\": \"Link\", \"options\": \"Currency\", \"width\": 110, \"id\": \"currency\", \"name\": \"Currency\", \"editable\": false, \"compareValue\": null}], \"filters\": {\"company\": \"Timaflor Limited\", \"from_date\": \"2025-01-01\", \"to_date\": \"2025-04-28\", \"supplier\": [], \"supplier_quotation\": [], \"request_for_quotation\": \"PUR-RFQ-2025-00013\", \"categorize_by\": \"Categorize by Supplier\"}}",
+  "letter_head": "Timaflor Letterhead",
+  "modified": "2025-08-21 16:50:24.149738",
+  "module": "Buying",
+  "name": "Supplier Quotation Comparison Report",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "Supplier Quotation",
+  "reference_report": "Supplier Quotation Comparison",
+  "report_name": "Supplier Quotation Comparison Report",
+  "report_script": null,
+  "report_type": "Custom Report",
+  "roles": [
+   {
+    "parent": "Supplier Quotation Comparison Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "Supplier Quotation Comparison Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "Supplier Quotation Comparison Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock User"
+   },
+   {
+    "parent": "Supplier Quotation Comparison Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Manufacturing Manager"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 1,
+  "add_translate_data": 0,
+  "columns": [
+   {
+    "fieldname": "item_code",
+    "fieldtype": "Data",
+    "label": "ITEM CODE",
+    "options": null,
+    "parent": "Stock Balance Report",
+    "parentfield": "columns",
+    "parenttype": "Report",
+    "width": 100
+   },
+   {
+    "fieldname": "item_name",
+    "fieldtype": "Data",
+    "label": "ITEM NAME",
+    "options": null,
+    "parent": "Stock Balance Report",
+    "parentfield": "columns",
+    "parenttype": "Report",
+    "width": 220
+   },
+   {
+    "fieldname": "uom",
+    "fieldtype": "Data",
+    "label": "UOM",
+    "options": null,
+    "parent": "Stock Balance Report",
+    "parentfield": "columns",
+    "parenttype": "Report",
+    "width": 100
+   },
+   {
+    "fieldname": "warehouse",
+    "fieldtype": "Data",
+    "label": "WAREHOUSE",
+    "options": null,
+    "parent": "Stock Balance Report",
+    "parentfield": "columns",
+    "parenttype": "Report",
+    "width": 200
+   },
+   {
+    "fieldname": "issued_qty",
+    "fieldtype": "Data",
+    "label": "ISSUED QTY",
+    "options": null,
+    "parent": "Stock Balance Report",
+    "parentfield": "columns",
+    "parenttype": "Report",
+    "width": 200
+   },
+   {
+    "fieldname": "current_balance_qty",
+    "fieldtype": "Data",
+    "label": "CURRENT QTY",
+    "options": null,
+    "parent": "Stock Balance Report",
+    "parentfield": "columns",
+    "parenttype": "Report",
+    "width": 150
+   }
+  ],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [
+   {
+    "default": "From 2025",
+    "fieldname": "from_date",
+    "fieldtype": "Date",
+    "label": "Start Date",
+    "mandatory": 0,
+    "options": null,
+    "parent": "Stock Balance Report",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": "Today",
+    "fieldname": "to_date",
+    "fieldtype": "Date",
+    "label": "End Date",
+    "mandatory": 0,
+    "options": null,
+    "parent": "Stock Balance Report",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   }
+  ],
+  "is_standard": "No",
+  "javascript": null,
+  "json": null,
+  "letter_head": "Timaflor Letterhead",
+  "modified": "2025-04-28 20:21:16.069906",
+  "module": "Stock",
+  "name": "Stock Balance Report",
+  "prepared_report": 0,
+  "query": "SELECT\n    sle.item_code,\n    item.item_name,\n    item.stock_uom AS uom,\n    sle.warehouse,\n    SUM(CASE WHEN sle.voucher_type = 'Stock Entry' AND sle.actual_qty < 0 THEN ABS(sle.actual_qty) ELSE 0 END) AS issued_qty,\n    (SELECT SUM(actual_qty)\n     FROM `tabBin`\n     WHERE item_code = sle.item_code\n       AND warehouse = sle.warehouse) AS current_balance_qty\n\n\nFROM\n    `tabStock Ledger Entry` sle\nJOIN\n    `tabItem` item ON item.name = sle.item_code\nWHERE\n    sle.docstatus = 1\n    AND sle.posting_date BETWEEN %(from_date)s AND %(to_date)s\n    \nGROUP BY\n    sle.item_code, sle.warehouse\nHAVING \n    current_balance_qty > 0 \nORDER BY\n    sle.item_code, sle.warehouse;\n",
+  "ref_doctype": "Stock Ledger Entry",
+  "reference_report": null,
+  "report_name": "Stock Balance Report",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Stock Balance Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock User"
+   },
+   {
+    "parent": "Stock Balance Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Desk User"
+   },
+   {
+    "parent": "Stock Balance Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Item Manager"
+   },
+   {
+    "parent": "Stock Balance Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   },
+   {
+    "parent": "Stock Balance Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Maintenance User"
+   },
+   {
+    "parent": "Stock Balance Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "Stock Balance Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Manufacturing User"
+   },
+   {
+    "parent": "Stock Balance Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock Manager"
+   },
+   {
+    "parent": "Stock Balance Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Sales User"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [
+   {
+    "fieldname": "supplier",
+    "fieldtype": "Data",
+    "label": "SUPPLIER",
+    "options": null,
+    "parent": "FOC Projection Report",
+    "parentfield": "columns",
+    "parenttype": "Report",
+    "width": 500
+   },
+   {
+    "fieldname": "total_qty",
+    "fieldtype": "Float",
+    "label": "TOTAL QUANTITY",
+    "options": null,
+    "parent": "FOC Projection Report",
+    "parentfield": "columns",
+    "parenttype": "Report",
+    "width": 350
+   }
+  ],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [
+   {
+    "default": "From This Year 2025",
+    "fieldname": "from_date",
+    "fieldtype": "Date",
+    "label": "Starting",
+    "mandatory": 0,
+    "options": null,
+    "parent": "FOC Projection Report",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": "Today",
+    "fieldname": "to_date",
+    "fieldtype": "Date",
+    "label": "As at",
+    "mandatory": 0,
+    "options": null,
+    "parent": "FOC Projection Report",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   }
+  ],
+  "is_standard": "No",
+  "javascript": null,
+  "json": null,
+  "letter_head": "Timaflor Letterhead",
+  "modified": "2025-07-23 17:56:09.357179",
+  "module": "Upande Timaflor",
+  "name": "FOC Projection Report",
+  "prepared_report": 0,
+  "query": "SELECT\n    CONCAT(\n        '<a href=\"/app/purchase-receipt?',\n        'posting_date=%%5B%%22Between%%22%%2C%%5B%%22', %(from_date)s, '%%22%%2C%%22', %(to_date)s, '%%22%%5D%%5D',\n        '&custom_free_of_charge=1',\n        '&status=Completed',\n        '&supplier=', REPLACE(REPLACE(REPLACE(pr.supplier, ' ', '+'), '&', '%%26'), ',', '%%2C'),\n        '\">', pr.supplier, '</a>'\n    ) AS supplier,\n    SUM(pr.total_qty) AS po_amount\nFROM\n    `tabPurchase Receipt` AS pr\nWHERE\n    pr.docstatus = 1\n    AND pr.custom_free_of_charge = 1\n    AND pr.status = 'Completed'\n    AND pr.posting_date BETWEEN %(from_date)s AND %(to_date)s\nGROUP BY\n    pr.supplier\nORDER BY\n    pr.supplier\n",
+  "ref_doctype": "Purchase Receipt",
+  "reference_report": null,
+  "report_name": "FOC Projection Report",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "FOC Projection Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock User"
+   },
+   {
+    "parent": "FOC Projection Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Procurement Officer"
+   },
+   {
+    "parent": "FOC Projection Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock User"
+   },
+   {
+    "parent": "FOC Projection Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Production Manager"
+   },
+   {
+    "parent": "FOC Projection Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "FOC Projection Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Purchase Master Manager"
+   },
+   {
+    "parent": "FOC Projection Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock User"
+   },
+   {
+    "parent": "FOC Projection Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "FOC Projection Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "General Manager"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 1,
+  "add_translate_data": 0,
+  "columns": [
+   {
+    "fieldname": "doc_date",
+    "fieldtype": "Date",
+    "label": "LPO date",
+    "options": null,
+    "parent": "Supplier Projection Report",
+    "parentfield": "columns",
+    "parenttype": "Report",
+    "width": 120
+   },
+   {
+    "fieldname": "lpo_id",
+    "fieldtype": "Data",
+    "label": " PO ID",
+    "options": null,
+    "parent": "Supplier Projection Report",
+    "parentfield": "columns",
+    "parenttype": "Report",
+    "width": 220
+   },
+   {
+    "fieldname": "supplier",
+    "fieldtype": "Data",
+    "label": "Supplier ",
+    "options": "Supplier",
+    "parent": "Supplier Projection Report",
+    "parentfield": "columns",
+    "parenttype": "Report",
+    "width": 280
+   },
+   {
+    "fieldname": "linked_po",
+    "fieldtype": "Data",
+    "label": "Purchase Invoice ID",
+    "options": null,
+    "parent": "Supplier Projection Report",
+    "parentfield": "columns",
+    "parenttype": "Report",
+    "width": 220
+   },
+   {
+    "fieldname": "po_amount",
+    "fieldtype": "Float",
+    "label": "PO amount",
+    "options": null,
+    "parent": "Supplier Projection Report",
+    "parentfield": "columns",
+    "parenttype": "Report",
+    "width": 150
+   }
+  ],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [
+   {
+    "default": "From This Year 2025",
+    "fieldname": "from_date",
+    "fieldtype": "Date",
+    "label": "START DATE",
+    "mandatory": 0,
+    "options": null,
+    "parent": "Supplier Projection Report",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": "Today",
+    "fieldname": "to_date",
+    "fieldtype": "Date",
+    "label": "END DATE",
+    "mandatory": 0,
+    "options": null,
+    "parent": "Supplier Projection Report",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   }
+  ],
+  "is_standard": "No",
+  "javascript": null,
+  "json": null,
+  "letter_head": "Timaflor 1",
+  "modified": "2025-05-08 15:38:38.067595",
+  "module": "Buying",
+  "name": "Supplier Projection Report",
+  "prepared_report": 0,
+  "query": "SELECT\n    po.transaction_date AS po_date,\n    CONCAT('<a href=\"/app/purchase-order/', po.name, '\">', po.name, '</a>') AS purchase_order,\n    CONCAT('<a href=\"/app/purchase-order/view/report?docstatus=1&supplier=', po.supplier, '\">', po.supplier, '</a>') AS supplier,\n    GROUP_CONCAT(DISTINCT CONCAT('<a href=\"/app/purchase-invoice/', pi.name, '\">', pi.name, '</a>')) AS purchase_invoices,\n    po.grand_total AS po_amount\nFROM\n    `tabPurchase Invoice` AS pi\nJOIN\n    `tabPurchase Invoice Item` AS pii ON pi.name = pii.parent\nJOIN\n    `tabPurchase Order` AS po ON pii.purchase_order = po.name\nWHERE\n    pi.docstatus = 1\n    AND pi.posting_date BETWEEN %(from_date)s AND %(to_date)s\nGROUP BY\n    po.name\nORDER BY\n    po.transaction_date;\n",
+  "ref_doctype": "Supplier",
+  "reference_report": null,
+  "report_name": "Supplier Projection Report",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Supplier Projection Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts Manager"
+   },
+   {
+    "parent": "Supplier Projection Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Purchase Master Manager"
+   },
+   {
+    "parent": "Supplier Projection Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "Supplier Projection Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "Supplier Projection Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock Manager"
+   },
+   {
+    "parent": "Supplier Projection Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock User"
+   },
+   {
+    "parent": "Supplier Projection Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [
+   {
+    "fieldname": "posting_date",
+    "fieldtype": "Date",
+    "label": "DATE",
+    "options": null,
+    "parent": "Item Price History Report",
+    "parentfield": "columns",
+    "parenttype": "Report",
+    "width": 120
+   },
+   {
+    "fieldname": "uom",
+    "fieldtype": "Data",
+    "label": "UOM",
+    "options": null,
+    "parent": "Item Price History Report",
+    "parentfield": "columns",
+    "parenttype": "Report",
+    "width": 60
+   },
+   {
+    "fieldname": "item_code",
+    "fieldtype": "Data",
+    "label": "ITEM CODE",
+    "options": null,
+    "parent": "Item Price History Report",
+    "parentfield": "columns",
+    "parenttype": "Report",
+    "width": 80
+   },
+   {
+    "fieldname": "item_name",
+    "fieldtype": "Data",
+    "label": "ITEM NAME",
+    "options": null,
+    "parent": "Item Price History Report",
+    "parentfield": "columns",
+    "parenttype": "Report",
+    "width": 200
+   },
+   {
+    "fieldname": "item_group",
+    "fieldtype": "Data",
+    "label": "ITEM GROUP",
+    "options": null,
+    "parent": "Item Price History Report",
+    "parentfield": "columns",
+    "parenttype": "Report",
+    "width": 120
+   },
+   {
+    "fieldname": "supplier",
+    "fieldtype": "Data",
+    "label": "SUPPLIER",
+    "options": null,
+    "parent": "Item Price History Report",
+    "parentfield": "columns",
+    "parenttype": "Report",
+    "width": 300
+   },
+   {
+    "fieldname": "rate ",
+    "fieldtype": "Float",
+    "label": "UNIT PRICE",
+    "options": null,
+    "parent": "Item Price History Report",
+    "parentfield": "columns",
+    "parenttype": "Report",
+    "width": 150
+   },
+   {
+    "fieldname": "currency",
+    "fieldtype": "Data",
+    "label": "CURRENCY",
+    "options": null,
+    "parent": "Item Price History Report",
+    "parentfield": "columns",
+    "parenttype": "Report",
+    "width": 50
+   },
+   {
+    "fieldname": "purchase_invoice",
+    "fieldtype": "Data",
+    "label": "PURCHASE INVOICE",
+    "options": null,
+    "parent": "Item Price History Report",
+    "parentfield": "columns",
+    "parenttype": "Report",
+    "width": 200
+   }
+  ],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [
+   {
+    "default": "From This Year 2025",
+    "fieldname": "from_date",
+    "fieldtype": "Date",
+    "label": "From",
+    "mandatory": 0,
+    "options": null,
+    "parent": "Item Price History Report",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": "Today",
+    "fieldname": "to_date",
+    "fieldtype": "Date",
+    "label": "As at",
+    "mandatory": 0,
+    "options": null,
+    "parent": "Item Price History Report",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   }
+  ],
+  "is_standard": "No",
+  "javascript": null,
+  "json": null,
+  "letter_head": "Timaflor Letterhead",
+  "modified": "2025-05-08 15:34:55.541270",
+  "module": "Stock",
+  "name": "Item Price History Report",
+  "prepared_report": 0,
+  "query": "SELECT\n    pi.posting_date,\n    pii.uom,\n    \n    pii.item_code,\n    pii.item_name,\n    pii.item_group,\n    pi.supplier,\n    pii.rate,\n    pi.currency,\n   CONCAT('<a href=\"/app/purchase-invoice/', pi.name, '\">', pi.name, '</a>') AS purchase_invoice\nFROM\n    `tabPurchase Invoice Item` AS pii\nJOIN\n    `tabPurchase Invoice` AS pi ON pii.parent = pi.name\nWHERE\n    pi.docstatus = 1\n \n    \n    AND pi.posting_date BETWEEN %(from_date)s AND %(to_date)s\nORDER BY\n    pi.posting_date DESC\n",
+  "ref_doctype": "Item",
+  "reference_report": null,
+  "report_name": "Item Price History Report",
+  "report_script": "",
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Item Price History Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock User"
+   },
+   {
+    "parent": "Item Price History Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Desk User"
+   },
+   {
+    "parent": "Item Price History Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Item Manager"
+   },
+   {
+    "parent": "Item Price History Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   },
+   {
+    "parent": "Item Price History Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Maintenance User"
+   },
+   {
+    "parent": "Item Price History Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "Item Price History Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Manufacturing User"
+   },
+   {
+    "parent": "Item Price History Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock Manager"
+   },
+   {
+    "parent": "Item Price History Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Sales User"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 1,
+  "add_translate_data": 0,
+  "columns": [
+   {
+    "fieldname": "transaction_date",
+    "fieldtype": "Date",
+    "label": "LPO date",
+    "options": null,
+    "parent": "LPO supply balance report",
+    "parentfield": "columns",
+    "parenttype": "Report",
+    "width": 120
+   },
+   {
+    "fieldname": "name",
+    "fieldtype": "Data",
+    "label": "Purchase Order ID",
+    "options": null,
+    "parent": "LPO supply balance report",
+    "parentfield": "columns",
+    "parenttype": "Report",
+    "width": 200
+   },
+   {
+    "fieldname": "supplier",
+    "fieldtype": "Data",
+    "label": "Supplier",
+    "options": "Supplier",
+    "parent": "LPO supply balance report",
+    "parentfield": "columns",
+    "parenttype": "Report",
+    "width": 260
+   },
+   {
+    "fieldname": "status",
+    "fieldtype": "Data",
+    "label": "LPO status",
+    "options": null,
+    "parent": "LPO supply balance report",
+    "parentfield": "columns",
+    "parenttype": "Report",
+    "width": 150
+   },
+   {
+    "fieldname": "item_code",
+    "fieldtype": "Data",
+    "label": "Item Code",
+    "options": "",
+    "parent": "LPO supply balance report",
+    "parentfield": "columns",
+    "parenttype": "Report",
+    "width": 100
+   },
+   {
+    "fieldname": "item_name",
+    "fieldtype": "Data",
+    "label": "Item Name",
+    "options": null,
+    "parent": "LPO supply balance report",
+    "parentfield": "columns",
+    "parenttype": "Report",
+    "width": 150
+   },
+   {
+    "fieldname": "item_group",
+    "fieldtype": "Data",
+    "label": "Item Group",
+    "options": null,
+    "parent": "LPO supply balance report",
+    "parentfield": "columns",
+    "parenttype": "Report",
+    "width": 160
+   },
+   {
+    "fieldname": "rate",
+    "fieldtype": "Float",
+    "label": "Price",
+    "options": null,
+    "parent": "LPO supply balance report",
+    "parentfield": "columns",
+    "parenttype": "Report",
+    "width": 110
+   },
+   {
+    "fieldname": "qty",
+    "fieldtype": "Data",
+    "label": "Ordered QTY",
+    "options": null,
+    "parent": "LPO supply balance report",
+    "parentfield": "columns",
+    "parenttype": "Report",
+    "width": 120
+   },
+   {
+    "fieldname": "received_qty",
+    "fieldtype": "Data",
+    "label": "Received QTY",
+    "options": null,
+    "parent": "LPO supply balance report",
+    "parentfield": "columns",
+    "parenttype": "Report",
+    "width": 120
+   },
+   {
+    "fieldname": "balance_qty",
+    "fieldtype": "Data",
+    "label": "Balance QTY",
+    "options": null,
+    "parent": "LPO supply balance report",
+    "parentfield": "columns",
+    "parenttype": "Report",
+    "width": 120
+   }
+  ],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [
+   {
+    "default": "From This Year 2025",
+    "fieldname": "from_date",
+    "fieldtype": "Date",
+    "label": "From",
+    "mandatory": 0,
+    "options": null,
+    "parent": "LPO supply balance report",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": "Today",
+    "fieldname": "to_date",
+    "fieldtype": "Date",
+    "label": "To",
+    "mandatory": 0,
+    "options": null,
+    "parent": "LPO supply balance report",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   }
+  ],
+  "is_standard": "No",
+  "javascript": null,
+  "json": null,
+  "letter_head": "Timaflor 1",
+  "modified": "2025-04-29 15:31:36.293945",
+  "module": "Buying",
+  "name": "LPO supply balance report",
+  "prepared_report": 0,
+  "query": "SELECT\n    po.transaction_date AS po_date,\n    CONCAT('<a href=\"/app/purchase-order/', po.name, '\">', po.name, '</a>') AS purchase_order_id,\n    CONCAT('<a href=\"/app/purchase-order/', po.name, '\">', po.supplier, '</a>') AS supplier,\n    po.status AS po_status,\n\n\n    poi.item_code,\n    poi.item_name, \n    poi.item_group, \n    poi.rate,                             \n    poi.qty AS ordered_qty,               \n    poi.received_qty,                     \n    (poi.qty - poi.received_qty) AS balance_qty\n                 \nFROM\n    `tabPurchase Order Item` AS poi         \nJOIN\n    `tabPurchase Order` AS po ON poi.parent = po.name \nJOIN\n    `tabItem` item ON poi.item_code = item.name \nWHERE\n    po.docstatus = 1 \n    AND po.status NOT IN ('Cancelled', 'Closed') \n    AND (poi.qty - poi.received_qty) > 0\n    AND po.transaction_date BETWEEN %(from_date)s AND %(to_date)s\nGROUP BY\npo.transaction_date,\npo.supplier\n    \nORDER BY\npo.transaction_date,\n    po.supplier,                          \n    item.item_group,\n    poi.item_code;\n",
+  "ref_doctype": "Purchase Order",
+  "reference_report": null,
+  "report_name": "LPO supply balance report",
+  "report_script": "frappe.query_reports[\"LPO supply balance report\"] = {\n    onload: function(report) {\n        report.filters.supplier = report.filters.supplier || '';\n        report.filters.item_name = report.filters.item_name || '';\n        report.filters.purchase_order_id = report.filters.purchase_order_id || '';\n    }\n};\n",
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "LPO supply balance report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts Manager"
+   },
+   {
+    "parent": "LPO supply balance report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Purchase Master Manager"
+   },
+   {
+    "parent": "LPO supply balance report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "LPO supply balance report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "LPO supply balance report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock Manager"
+   },
+   {
+    "parent": "LPO supply balance report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock User"
+   },
+   {
+    "parent": "LPO supply balance report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   }
+  ],
+  "timeout": 0
+ }
+]

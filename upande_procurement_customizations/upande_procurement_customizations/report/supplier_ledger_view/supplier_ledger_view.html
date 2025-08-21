@@ -1,0 +1,28 @@
+{% if frappe.db.get_single_value("Print Settings", "with_letterhead") == 1 %}
+  {{ frappe.db.get_default("letter_head") or "" }}
+{% endif %}
+
+<h2>Supplier Ledger View</h2>
+<p><strong>Supplier:</strong> {{ filters.supplier }}</p>
+<p><strong>As at:</strong> {{ filters.to_date }}</p>
+
+<table style="border-collapse: collapse; width: 100%;">
+  <thead>
+    <tr>
+      {% for col in columns %}
+        <th style="border: 1px solid #000; padding: 4px;">{{ col.label }}</th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in data %}
+      <tr>
+        {% for col in columns %}
+          <td style="border: 1px solid #000; padding: 4px;">
+            {{ row[col.fieldname] }}
+          </td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>

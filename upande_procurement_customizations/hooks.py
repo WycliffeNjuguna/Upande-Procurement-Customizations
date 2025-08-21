@@ -242,3 +242,28 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+fixtures = [
+    {
+        "doctype": "Report",
+        "filters": {
+            "name": ["in", [
+                "FOC Projection Report",
+                "LPO Supply Balance Report",
+                "Stock Balance Report",
+                "Supplier Projection Report",
+                "Purchase Receipts Linked to PO",
+                "Supplier Quotation Comparison Report",
+                "Purchase Average Report",
+                "Item Price History Report",
+                "Payment Projection Report"
+            ]]
+        }
+    },
+    {
+        "doctype": "Workspace",
+        "filters": {
+            "name": ["=", "Procurement Reports"]
+        }
+    }
+]
+
