@@ -274,7 +274,7 @@
   "json": null,
   "letter_head": "Timaflor Letterhead",
   "modified": "2025-07-23 17:56:09.357179",
-  "module": "Upande Timaflor",
+  "module": "Upande Procurement Customizations",
   "name": "FOC Projection Report",
   "prepared_report": 0,
   "query": "SELECT\n    CONCAT(\n        '<a href=\"/app/purchase-receipt?',\n        'posting_date=%%5B%%22Between%%22%%2C%%5B%%22', %(from_date)s, '%%22%%2C%%22', %(to_date)s, '%%22%%5D%%5D',\n        '&custom_free_of_charge=1',\n        '&status=Completed',\n        '&supplier=', REPLACE(REPLACE(REPLACE(pr.supplier, ' ', '+'), '&', '%%26'), ',', '%%2C'),\n        '\">', pr.supplier, '</a>'\n    ) AS supplier,\n    SUM(pr.total_qty) AS po_amount\nFROM\n    `tabPurchase Receipt` AS pr\nWHERE\n    pr.docstatus = 1\n    AND pr.custom_free_of_charge = 1\n    AND pr.status = 'Completed'\n    AND pr.posting_date BETWEEN %(from_date)s AND %(to_date)s\nGROUP BY\n    pr.supplier\nORDER BY\n    pr.supplier\n",
